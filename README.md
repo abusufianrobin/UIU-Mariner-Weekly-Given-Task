@@ -33,10 +33,18 @@ Practical use of **Git version control** — initializing repositories, branchin
 ---
 
 ### 📂 Repository Structure  
+
 📁 UIU-Mariner-Weekly-Given-Task
- ┣ 📄 Python_List.py
- ┣ 📄 Python_Test.py
- ┣ 📄 Python_Condition.py
- ┣ 📄 simple_math_operation.py
- ┗ 📄 UIU_Mariner_Week_1_Report.pdf
+┣ 📄 Python_List.py
+┣ 📄 Python_Test.py
+┣ 📄 Python_Condition.py
+┣ 📄 simple_math_operation.py
+┗ 📄 UIU_Mariner_Week_1_Report.pdf
+
+
+---
+
+### 🏁 Conclusion  
+This week built a strong foundation in **Python programming** and **Git version control**, preparing for advanced tasks in upcoming weeks.
+
 
