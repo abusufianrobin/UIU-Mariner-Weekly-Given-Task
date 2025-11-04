@@ -1,5 +1,4 @@
-# UIU-Mariner-Weekly-Given-Task
-# 🐍 UIU Mariner – Weekly Task Report 1
+# 🐍 UIU Mariner – Weekly Task Report 
 
 ### 👤 Author  
 **Abu Sufian Robin**  
@@ -34,4 +33,10 @@ Practical use of **Git version control** — initializing repositories, branchin
 ---
 
 ### 📂 Repository Structure  
+📁 UIU-Mariner-Weekly-Given-Task
+ ┣ 📄 Python_List.py
+ ┣ 📄 Python_Test.py
+ ┣ 📄 Python_Condition.py
+ ┣ 📄 simple_math_operation.py
+ ┗ 📄 UIU_Mariner_Week_1_Report.pdf
 
