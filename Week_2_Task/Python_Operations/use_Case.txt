@@ -1,0 +1,77 @@
+PS D:\UIU_Mariner> cd Week_2_Task
+PS D:\UIU_Mariner\Week_2_Task> cd Python_Operations
+PS D:\UIU_Mariner\Week_2_Task\Python_Operations> python main.py
+ Welcome to the Multi-Calculator CLI App 
+
+Available options:
+1. BMI Calculator
+2. CGPA Calculator
+3. Area Calculator (Rectangle, Circle, Square, Triangle)
+4. Exit
+
+Enter your choice (1-4): 1
+Enter weight in kg: 80
+Enter height in meters: 1.66
+Your BMI is: 29.03       
+Enter your choice (1-4): 2
+Enter Number of Subjects: 5
+Enter Grade Point for Subject 1: 3.67
+Enter Credit Hour for Subject 1: 3
+Enter Grade Point for Subject 2: 3.67
+Enter Credit Hour for Subject 2: 3
+Enter Grade Point for Subject 3: 3.67
+Enter Credit Hour for Subject 3: 3
+Enter Grade Point for Subject 4: 3
+Enter Credit Hour for Subject 4: 1
+Enter Grade Point for Subject 5: 4
+Enter Credit Hour for Subject 5: 3
+ Calculated CGPA (UIU Grading System): 3.69
+
+Enter your choice (1-4): 3
+Area Calculator Options:
+1. Rectangle
+2. Circle
+3. Square
+4. Triangle
+
+Enter choice: 1
+Enter length: 5
+Enter width: 8
+ Area of Rectangle: 40.0
+
+Enter your choice (1-4): 3
+Area Calculator Options:
+1. Rectangle
+2. Circle
+3. Square
+4. Triangle
+
+Enter choice: 2
+ Enter Radius: 5
+ Area of Circle: 78.54
+
+Enter your choice (1-4): 3
+Area Calculator Options:
+1. Rectangle
+2. Circle
+3. Square
+4. Triangle
+
+Enter choice: 3
+ Enter side: 6
+ Area of Square: 36.0
+
+Enter your choice (1-4): 3
+Area Calculator Options:
+1. Rectangle
+2. Circle
+3. Square
+4. Triangle
+
+Enter choice: 4
+ Enter base: 8
+ Enter height: 4
+ Area of Triangle: 16.0
+
+Enter your choice (1-4): 4
+Exit!
