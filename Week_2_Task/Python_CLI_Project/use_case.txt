@@ -1,0 +1,163 @@
+PS D:\UIU_Mariner\Week_2_Task\Python_CLI_Project> python main.py       
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done    
+4. Delete Task
+5. Exit
+Choose an option (1–5): 1
+
+No tasks found.
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done      
+4. Delete Task
+5. Exit
+Choose an option (1–5): 2 
+Enter the task title: Final Registration will be Complete.
+Task "Final Registration will be Complete." added successfully!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 2
+Enter the task title: Assignment will be complete.
+Task "Assignment will be complete." added successfully!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 2
+Enter the task title: Join the 10th November Course.
+Task "Join the 10th November Course." added successfully!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 1
+
+To-Do List:
+1. Final Registration will be Complete. — Pending!!!
+2. Assignment will be complete. — Pending!!!
+3. Join the 10th November Course. — Pending!!!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 3
+
+To-Do List:
+1. Final Registration will be Complete. — Pending!!!
+2. Assignment will be complete. — Pending!!!
+3. Join the 10th November Course. — Pending!!!
+
+Enter task number to mark as done: 1
+Task 'Final Registration will be Complete.' marked as done!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 1
+
+To-Do List:
+1. Final Registration will be Complete. — Done!!!
+2. Assignment will be complete. — Pending!!!
+3. Join the 10th November Course. — Pending!!!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 2
+Enter the task title: Clear the backlog of this previous course.
+Task "Clear the backlog of this previous course." added successfully!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 1
+
+To-Do List:
+1. Final Registration will be Complete. — Done!!!
+2. Assignment will be complete. — Pending!!!
+3. Join the 10th November Course. — Pending!!!
+4. Clear the backlog of this previous course. — Pending!!!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 3
+
+To-Do List:
+1. Final Registration will be Complete. — Done!!!
+2. Assignment will be complete. — Pending!!!
+3. Join the 10th November Course. — Pending!!!
+4. Clear the backlog of this previous course. — Pending!!!
+
+Enter task number to mark as done: 2
+Task 'Assignment will be complete.' marked as done!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 4
+
+To-Do List:
+1. Final Registration will be Complete. — Done!!!
+2. Assignment will be complete. — Done!!!
+3. Join the 10th November Course. — Pending!!!
+4. Clear the backlog of this previous course. — Pending!!!
+
+Enter task number to delete: 4
+Task 'Clear the backlog of this previous course.' deleted successfully!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 1
+
+To-Do List:
+1. Final Registration will be Complete. — Done!!!
+2. Assignment will be complete. — Done!!!
+3. Join the 10th November Course. — Pending!!!
+
+=== To-Do List Manager ===
+1. Show Tasks
+2. Add Task
+3. Mark Task as Done
+4. Delete Task
+5. Exit
+Choose an option (1–5): 5
+Exiting To-Do List. Have a productive day!
