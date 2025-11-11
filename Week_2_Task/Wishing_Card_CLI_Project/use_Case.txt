@@ -1,0 +1,26 @@
+PS D:\UIU_Mariner\Week_2_Task\Wishing_Card_CLI_Project> python main.py
+Welcome to the Wishing Card CLI Project!
+
+          Choose your wishing type:
+1. Morning
+2. Afternoon
+3. Evening
+4. Night
+5. Birthday
+6. Marriage Anniversary
+7. Exit
+
+Enter your choice (1–7): 4
+Enter the name of the person you want to wish: Robin
+Good Night Robin! Sleep well and have sweet dreams.
+
+-----------------------------
+
+Enter your choice (1–7): 5
+Enter the name of the person you want to wish: Sufian
+Happy Birthday Sufian! Wishing you a year filled with joy and success.
+
+-----------------------------
+
+Enter your choice (1–7): 7
+Exiting... Have a great day!
