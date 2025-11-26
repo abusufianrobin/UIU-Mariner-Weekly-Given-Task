@@ -1,9 +1,14 @@
 Activate the virtual environment :
 .\venv\Scripts\activate
 
+Deactivate : 
+deactivate venv
+
 
 
 Output : 
 
 [(1, 'Robin', 'newrajib@uiu.ac.bd', 23), (4, 'Sufian', 'sufian@uiu.ac.bd', 22), (5, 'Robin', 'robin@uiu.ac.bd', 23), (6, 'Sufian', 
 'sufian@uiu.ac.bd', 22), (7, 'Rajib', 'rajib@uiu.ac.bd', 23), (8, 'Tanvir', 'tanvir@uiu.ac.bd', 24), (9, 'Rajib', 'rajib@uiu.ac.bd', 23), (10, 'Tanvir', 'tanvir@uiu.ac.bd', 24), (11, 'Rajib', 'rajib@uiu.ac.bd', 23), (12, 'Tanvir', 'tanvir@uiu.ac.bd', 24), (13, 'John Doe', 'john.doe@example.com', 25), (14, 'Jane Smith', 'jane.smith@example.com', 30)]
+
+
