@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS Team_AURA;
+USE Team_AURA;
+
+CREATE TABLE IF NOT EXISTS students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(50),
+    age INT
+);
+
+
