@@ -1,0 +1,72 @@
+{
+  "dataset_info": {
+    "source": "Holyrood Subsea Observatory",
+    "class": "2026 EXPLORER CLASS",
+    "sensor_weight_in_water_newtons": "<10",
+    "total_species_count": 10,
+    "total_observations": 84,
+    "percentage_calculation": "(number_seen / total_observations) * 100"
+  },
+  "species_frequency_data": [
+    {
+      "common_name": "Snow crab",
+      "scientific_name": "Chionecetes opilio",
+      "number_seen": 19,
+      "percentage_frequency": 22.61904762
+    },
+    {
+      "common_name": "Acadian hermit crab",
+      "scientific_name": "Pagurus acadianus",
+      "number_seen": 3,
+      "percentage_frequency": 3.57142857
+    },
+    {
+      "common_name": "Western Atlantic Hairy Hermit Crab",
+      "scientific_name": "Pagurus arcuatus",
+      "number_seen": 1,
+      "percentage_frequency": 1.19047619
+    },
+    {
+      "common_name": "European Green Crab",
+      "scientific_name": "Carcinus maenas",
+      "number_seen": 9,
+      "percentage_frequency": 10.71428571
+    },
+    {
+      "common_name": "Rock Crab",
+      "scientific_name": "Cancer pagurus",
+      "number_seen": 10,
+      "percentage_frequency": 11.90476190
+    },
+    {
+      "common_name": "Jonah Crab",
+      "scientific_name": "Cancer borealis",
+      "number_seen": 5,
+      "percentage_frequency": 5.95238095
+    },
+    {
+      "common_name": "Spiny Sunstar",
+      "scientific_name": "Crossaster papposus",
+      "number_seen": 8,
+      "percentage_frequency": 9.52380952
+    },
+    {
+      "common_name": "Sea Urchin",
+      "scientific_name": "Strongylocentrotus droebachiensis",
+      "number_seen": 10,
+      "percentage_frequency": 11.90476190
+    },
+    {
+      "common_name": "Boreal Sea Star",
+      "scientific_name": "Asterias borealis",
+      "number_seen": 12,
+      "percentage_frequency": 14.28571429
+    },
+    {
+      "common_name": "Daisy brittle star",
+      "scientific_name": "Ophiopholis aculeata",
+      "number_seen": 7,
+      "percentage_frequency": 8.33333333
+    }
+  ]
+}
