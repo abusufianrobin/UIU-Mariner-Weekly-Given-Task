@@ -22,10 +22,8 @@ from PyQt5.QtGui import (
     QPainter, QPixmap, QIcon
 )
 
+# Color GIven
 
-# ──────────────────────────────────────────────
-#  Colour palette
-# ──────────────────────────────────────────────
 DEEP_OCEAN   = "#0a1628"
 MID_OCEAN    = "#0d2137"
 PANEL_BG     = "#0f2a45"
@@ -41,13 +39,20 @@ HEADER_BG    = "#0a3352"
 TOTAL_BG     = "#003d2a"
 
 
-# ──────────────────────────────────────────────
-#  Styled widgets
-# ──────────────────────────────────────────────
-def make_label(text, size=11, bold=False, color=TEXT_PRIMARY):
+#  Font and Size declare
+
+TNR          = "'Times New Roman', Times, serif"   # CSS font-family string
+TNR_PT       = 16                                   # base point size
+
+
+# text labelling
+
+def make_label(text, size=TNR_PT, bold=False, color=TEXT_PRIMARY):
     lbl = QLabel(text)
-    lbl.setStyleSheet(f"color: {color}; font-size: {size}pt;"
-                      f"{'font-weight: bold;' if bold else ''} background: transparent;")
+    lbl.setStyleSheet(
+        f"color: {color}; font-family: {TNR}; font-size: {size}pt;"
+        f"{'font-weight: bold;' if bold else ''} background: transparent;"
+    )
     return lbl
 
 
@@ -81,6 +86,7 @@ class SpeciesInputRow(QFrame):
         lay.setSpacing(12)
 
         # Index badge
+
         badge = QLabel(f"{index:02d}")
         badge.setFixedSize(32, 32)
         badge.setAlignment(Qt.AlignCenter)
@@ -88,8 +94,9 @@ class SpeciesInputRow(QFrame):
             background: qlineargradient(x1:0,y1:0,x2:1,y2:1,
                 stop:0 {ACCENT_TEAL}, stop:1 {ACCENT_BLUE});
             color: {DEEP_OCEAN};
+            font-family: {TNR};
             font-weight: bold;
-            font-size: 10pt;
+            font-size: {TNR_PT}pt;
             border-radius: 16px;
         """)
         lay.addWidget(badge)
@@ -102,7 +109,7 @@ class SpeciesInputRow(QFrame):
         lay.addWidget(self.name_edit, stretch=3)
 
         # Number seen field
-        num_lbl = make_label("Seen:", 10, color=TEXT_MUTED)
+        num_lbl = make_label("Seen:", TNR_PT, color=TEXT_MUTED)
         lay.addWidget(num_lbl)
 
         self.count_edit = QLineEdit()
@@ -118,16 +125,18 @@ class SpeciesInputRow(QFrame):
             QLineEdit {{
                 background: {MID_OCEAN};
                 color: {TEXT_PRIMARY};
-                border: 1px solid #1e5070;
+                border: 2px solid #1e5070;
                 border-radius: 6px;
-                padding: 6px 10px;
-                font-size: 10pt;
+                padding: 8px 12px;
+                font-family: {TNR};
+                font-size: {TNR_PT}pt;
             }}
             QLineEdit:focus {{
-                border: 1px solid {ACCENT_TEAL};
+                border: 2px solid {ACCENT_TEAL};
             }}
             QLineEdit::placeholder {{
                 color: {TEXT_MUTED};
+                font-style: italic;
             }}
         """
 
@@ -148,9 +157,9 @@ class SpeciesInputRow(QFrame):
         return name, count
 
 
-# ──────────────────────────────────────────────
-#  Main window
-# ──────────────────────────────────────────────
+
+#  GUI Interface
+
 class EDNAApp(QMainWindow):
 
     MAX_SPECIES = 10
@@ -162,7 +171,7 @@ class EDNAApp(QMainWindow):
         self._build_ui()
         self._apply_global_style()
 
-    # ── Global stylesheet ──────────────────────
+    
     def _apply_global_style(self):
         self.setStyleSheet(f"""
             QMainWindow {{ background: {DEEP_OCEAN}; }}
@@ -180,33 +189,26 @@ class EDNAApp(QMainWindow):
             }}
         """)
 
-    # ── Build UI ───────────────────────────────
+   
     def _build_ui(self):
         central = QWidget()
         self.setCentralWidget(central)
+
         root = QVBoxLayout(central)
         root.setContentsMargins(24, 20, 24, 20)
-        root.setSpacing(16)
-
-        # ── Header ──
+        root.setSpacing(16)   
         root.addWidget(self._build_header())
 
-        # ── Content row ──
+        
         content = QHBoxLayout()
         content.setSpacing(20)
-
-        # Left: input panel
         content.addWidget(self._build_input_panel(), stretch=5)
-
-        # Right: result table
         content.addWidget(self._build_result_panel(), stretch=6)
 
         root.addLayout(content)
-
-        # ── Bottom buttons ──
         root.addWidget(self._build_button_bar())
 
-    # ── Header ────────────────────────────────
+   
     def _build_header(self):
         frame = QFrame()
         frame.setStyleSheet(f"""
@@ -219,9 +221,11 @@ class EDNAApp(QMainWindow):
         lay.setContentsMargins(20, 14, 20, 14)
         lay.setSpacing(4)
 
-        title = QLabel("eDNA Frequency Calculator")
+        title = QLabel(" eDNA Frequency Calculator")
         title.setStyleSheet(f"""
-            font-size: 18pt; font-weight: bold;
+            font-family: {TNR};
+            font-size: 22pt;
+            font-weight: bold;
             color: {ACCENT_GLOW};
             background: transparent;
         """)
@@ -229,13 +233,16 @@ class EDNAApp(QMainWindow):
 
         sub = QLabel("Holyrood Subsea Observatory  ·  Enter up to 10 species, "
                      "then click Calculate to see percentage frequencies.")
-        sub.setStyleSheet(f"color: {TEXT_MUTED}; font-size: 9pt; background: transparent;")
+        sub.setStyleSheet(
+            f"color: {TEXT_MUTED}; font-family: {TNR}; font-size: {TNR_PT}pt;"
+            f" font-style: italic; background: transparent;"
+        )
         lay.addWidget(sub)
 
         shadow(frame, radius=24, color=ACCENT_TEAL)
         return frame
 
-    # ── Input panel ───────────────────────────
+   
     def _build_input_panel(self):
         frame = QFrame()
         frame.setStyleSheet(f"""
@@ -249,7 +256,7 @@ class EDNAApp(QMainWindow):
         outer.setContentsMargins(16, 16, 16, 16)
         outer.setSpacing(10)
 
-        hdr = make_label("  Species Input", 12, bold=True, color=ACCENT_TEAL)
+        hdr = make_label("  Species Input", TNR_PT + 2, bold=True, color=ACCENT_TEAL)
         outer.addWidget(hdr)
 
         sep = QFrame(); sep.setFrameShape(QFrame.HLine)
@@ -272,7 +279,7 @@ class EDNAApp(QMainWindow):
         scroll.setWidget(container)
         outer.addWidget(scroll)
 
-        # Row management buttons
+        
         btn_row = QHBoxLayout()
         self.add_btn = self._make_small_btn("＋  Add Species", ACCENT_TEAL, DEEP_OCEAN)
         self.add_btn.clicked.connect(self._add_row)
@@ -283,13 +290,14 @@ class EDNAApp(QMainWindow):
         btn_row.addStretch()
         outer.addLayout(btn_row)
 
-        # Counter label
-        self.counter_lbl = make_label("0 / 10 species added", 9, color=TEXT_MUTED)
+        
+        self.counter_lbl = make_label("0 / 10 species added", TNR_PT - 2, color=TEXT_MUTED)
         outer.addWidget(self.counter_lbl)
 
         self.input_rows: list[SpeciesInputRow] = []
 
-        # Pre-populate with 10 default rows (the example data)
+        # By default 10 rows (initially)
+
         defaults = [
             ("Snow crab (Chionecetes opilio)",                        19),
             ("Acadian hermit crab (Pagurus acadianus)",                3),
@@ -318,7 +326,7 @@ class EDNAApp(QMainWindow):
             row.name_edit.setText(str(name))
         if count != "":
             row.count_edit.setText(str(count))
-        # Insert before the stretch item
+        
         self.rows_layout.insertWidget(self.rows_layout.count() - 1, row)
         self.input_rows.append(row)
         self._update_counter()
@@ -336,7 +344,7 @@ class EDNAApp(QMainWindow):
         self.counter_lbl.setText(f"{n} / {self.MAX_SPECIES} species added")
         self.add_btn.setEnabled(n < self.MAX_SPECIES)
 
-    # ── Result panel ──────────────────────────
+    
     def _build_result_panel(self):
         frame = QFrame()
         frame.setStyleSheet(f"""
@@ -350,14 +358,14 @@ class EDNAApp(QMainWindow):
         lay.setContentsMargins(16, 16, 16, 16)
         lay.setSpacing(10)
 
-        hdr = make_label("  Frequency Results", 12, bold=True, color=ACCENT_TEAL)
+        hdr = make_label("  Frequency Results", TNR_PT + 2, bold=True, color=ACCENT_TEAL)
         lay.addWidget(hdr)
 
         sep = QFrame(); sep.setFrameShape(QFrame.HLine)
         sep.setStyleSheet(f"color: #1a4060;")
         lay.addWidget(sep)
 
-        # Stats bar
+        
         stats = QHBoxLayout()
         self.total_lbl  = self._stat_card("Total Seen", "—")
         self.count_lbl  = self._stat_card("No. Species", "—")
@@ -367,7 +375,7 @@ class EDNAApp(QMainWindow):
         stats.addWidget(self.max_lbl[0])
         lay.addLayout(stats)
 
-        # Table
+        
         self.table = QTableWidget()
         self.table.setColumnCount(3)
         self.table.setHorizontalHeaderLabels(["Species", "Number Seen", "% Frequency"])
@@ -397,14 +405,19 @@ class EDNAApp(QMainWindow):
         vl.setContentsMargins(10, 8, 10, 8)
         vl.setSpacing(2)
         t = QLabel(title)
-        t.setStyleSheet(f"color:{TEXT_MUTED}; font-size:8pt; background:transparent;")
+        t.setStyleSheet(
+            f"color:{TEXT_MUTED}; font-family:{TNR}; font-size:{TNR_PT - 2}pt;"
+            f" font-style:italic; background:transparent;"
+        )
         t.setAlignment(Qt.AlignCenter)
         v = QLabel(value)
-        v.setStyleSheet(f"color:{ACCENT_GLOW}; font-size:14pt; font-weight:bold;"
-                        f"background:transparent;")
+        v.setStyleSheet(
+            f"color:{ACCENT_GLOW}; font-family:{TNR}; font-size:{TNR_PT + 2}pt;"
+            f" font-weight:bold; background:transparent;"
+        )
         v.setAlignment(Qt.AlignCenter)
         vl.addWidget(t); vl.addWidget(v)
-        return frame, v  # return (frame, value_label)
+        return frame, v  
 
     @staticmethod
     def _table_style():
@@ -415,11 +428,12 @@ class EDNAApp(QMainWindow):
                 gridline-color: #1a4060;
                 border: 1px solid #1a4060;
                 border-radius: 8px;
-                font-size: 9pt;
+                font-family: {TNR};
+                font-size: {TNR_PT}pt;
                 outline: none;
             }}
             QTableWidget::item {{
-                padding: 6px 10px;
+                padding: 8px 12px;
                 border-bottom: 1px solid #1a3050;
             }}
             QTableWidget::item:selected {{
@@ -429,15 +443,16 @@ class EDNAApp(QMainWindow):
             QHeaderView::section {{
                 background: {HEADER_BG};
                 color: {ACCENT_TEAL};
+                font-family: {TNR};
                 font-weight: bold;
-                font-size: 9pt;
-                padding: 8px 10px;
+                font-size: {TNR_PT}pt;
+                padding: 10px 12px;
                 border: none;
                 border-bottom: 2px solid {ACCENT_TEAL};
             }}
         """
 
-    # ── Button bar ────────────────────────────
+    
     def _build_button_bar(self):
         frame = QFrame()
         frame.setStyleSheet("background: transparent;")
@@ -445,14 +460,14 @@ class EDNAApp(QMainWindow):
         lay.setContentsMargins(0, 0, 0, 0)
         lay.setSpacing(12)
 
-        calc_btn = self._make_btn("Calculate Frequency", ACCENT_TEAL, DEEP_OCEAN)
+        calc_btn = self._make_btn(" Calculate Frequency", ACCENT_TEAL, DEEP_OCEAN)
         calc_btn.clicked.connect(self._calculate)
         shadow(calc_btn, radius=20, color=ACCENT_TEAL)
 
-        clear_btn = self._make_btn("Clear All", "#e05050", "#fff")
+        clear_btn = self._make_btn(" Clear All", "#e05050", "#fff")
         clear_btn.clicked.connect(self._clear_all)
 
-        export_btn = self._make_btn("Copy Results", ACCENT_BLUE, "#fff")
+        export_btn = self._make_btn(" Copy Results", ACCENT_BLUE, "#fff")
         export_btn.clicked.connect(self._copy_results)
 
         lay.addStretch()
@@ -462,21 +477,22 @@ class EDNAApp(QMainWindow):
 
         return frame
 
-    # ── Helpers ───────────────────────────────
+    
     @staticmethod
-    def _make_btn(text, bg, fg, size=11):
+    def _make_btn(text, bg, fg, size=TNR_PT):
         btn = QPushButton(text)
-        btn.setMinimumHeight(42)
-        btn.setMinimumWidth(180)
+        btn.setMinimumHeight(46)
+        btn.setMinimumWidth(200)
         btn.setStyleSheet(f"""
             QPushButton {{
                 background: {bg};
                 color: {fg};
                 border: none;
                 border-radius: 8px;
+                font-family: {TNR};
                 font-size: {size}pt;
                 font-weight: bold;
-                padding: 6px 20px;
+                padding: 8px 22px;
             }}
             QPushButton:hover {{
                 background: qlineargradient(x1:0,y1:0,x2:1,y2:0,
@@ -490,29 +506,30 @@ class EDNAApp(QMainWindow):
     @staticmethod
     def _make_small_btn(text, bg, fg):
         btn = QPushButton(text)
-        btn.setMinimumHeight(32)
+        btn.setMinimumHeight(36)
         btn.setStyleSheet(f"""
             QPushButton {{
                 background: {bg};
                 color: {fg};
                 border: none;
                 border-radius: 6px;
-                font-size: 9pt;
+                font-family: {TNR};
+                font-size: {TNR_PT - 2}pt;
                 font-weight: bold;
-                padding: 4px 14px;
+                padding: 5px 16px;
             }}
             QPushButton:hover {{ opacity: 0.85; }}
             QPushButton:disabled {{ background: #333; color: #666; }}
         """)
         return btn
 
-    # ── Core logic ────────────────────────────
+    # Caluculation logic
     def _calculate(self):
         if not self.input_rows:
             QMessageBox.warning(self, "No Data", "Please add at least one species.")
             return
 
-        # Collect & validate
+        
         rows_data = []
         for row in self.input_rows:
             try:
@@ -528,7 +545,7 @@ class EDNAApp(QMainWindow):
                                 "Total number seen is zero — cannot divide by zero.")
             return
 
-        # Populate table
+        
         n = len(rows_data)
         self.table.setRowCount(n + 1)   # +1 for total row
 
@@ -541,26 +558,30 @@ class EDNAApp(QMainWindow):
                 self._centered_item(str(count)),
                 self._centered_item(f"{pct:.8f}"),
             ]
+            tnr_font = QFont("Times New Roman", TNR_PT)
             for col, item in enumerate(items):
                 item.setBackground(bg)
                 item.setForeground(QColor(TEXT_PRIMARY))
+                item.setFont(tnr_font)
                 self.table.setItem(i, col, item)
 
-        # Total row
+        
         total_row = n
         total_bg  = QColor(TOTAL_BG)
         t_items   = [
-            QTableWidgetItem(" TOTAL"),
+            QTableWidgetItem("  TOTAL"),
             self._centered_item(str(total)),
             self._centered_item("100.00000000"),
         ]
         for col, item in enumerate(t_items):
             item.setBackground(total_bg)
             item.setForeground(QColor(ACCENT_GLOW))
-            font = item.font(); font.setBold(True); item.setFont(font)
+            tnr_bold = QFont("Times New Roman", TNR_PT)
+            tnr_bold.setBold(True)
+            item.setFont(tnr_bold)
             self.table.setItem(total_row, col, item)
 
-        # Update stat cards
+        
         self.total_lbl[1].setText(str(total))
         self.count_lbl[1].setText(str(n))
         max_name, max_count = max(rows_data, key=lambda x: x[1])
@@ -605,14 +626,17 @@ class EDNAApp(QMainWindow):
                                 "Results copied to clipboard as tab-separated text.")
 
 
-# ──────────────────────────────────────────────
-#  Entry point
-# ──────────────────────────────────────────────
+
 def main():
     app = QApplication(sys.argv)
     app.setStyle("Fusion")
 
-    # Dark palette base
+    # Set Times New Roman , font size : 16pt 
+
+    app_font = QFont("Times New Roman", TNR_PT)
+    app.setFont(app_font)
+
+    
     pal = QPalette()
     pal.setColor(QPalette.Window,          QColor(DEEP_OCEAN))
     pal.setColor(QPalette.WindowText,      QColor(TEXT_PRIMARY))
