@@ -8,9 +8,9 @@ A simple and interactive web-based application to calculate species observation 
 
 ## 🎥 Demo Video
 
-> 📌 Replace the link below with your actual demo video link (YouTube or GitHub upload)
+> Demo Video Link: 
 
-[![Watch Demo]([https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg](https://github.com/abusufianrobin/UIU-Mariner-Weekly-Given-Task/blob/main/Week_5_Task/Output/Input_Img.PNG))]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://github.com/abusufianrobin/UIU-Mariner-Weekly-Given-Task/blob/main/Week_5_Task/Output/Demo_Video_Species_Frequency_Count.mp4))
+[![Watch Demo]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://github.com/abusufianrobin/UIU-Mariner-Weekly-Given-Task/blob/main/Week_5_Task/Output/Demo_Video_Species_Frequency_Count.mp4))]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://github.com/abusufianrobin/UIU-Mariner-Weekly-Given-Task/blob/main/Week_5_Task/Output/Demo_Video_Species_Frequency_Count.mp4))
 
 > Demo Video: https://github.com/user-attachments/assets/eb40a13e-caba-474b-950e-996cf1c5b0c5
 ---
