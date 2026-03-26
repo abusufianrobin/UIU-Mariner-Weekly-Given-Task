@@ -47,6 +47,13 @@ A simple and interactive web-based application to calculate species observation 
 
 ---
 
+## 📸 Screenshots
 
+### 🔹 Species Input Section
+![Species Input](https://raw.githubusercontent.com/abusufianrobin/UIU-Mariner-Weekly-Given-Task/main/Week_5_Task/Output/Input_Img.PNG)
 
+### 🔹 Frequency Results Section
+![Frequency Results](https://raw.githubusercontent.com/abusufianrobin/UIU-Mariner-Weekly-Given-Task/main/Week_5_Task/Output/Output_Image.PNG)
+
+---
 
