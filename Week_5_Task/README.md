@@ -11,8 +11,11 @@ A simple and interactive web-based application to calculate species observation 
 
 <video width="100%" controls>
   <source src="https://raw.githubusercontent.com/abusufianrobin/UIU-Mariner-Weekly-Given-Task/main/Week_5_Task/Output/Demo_Video_Species_Frequency_Count.mp4" type="video/mp4">
-  Your browser does not support the video tag.
 </video>
+
+👉 [Or click here to open video](https://github.com/abusufianrobin/UIU-Mariner-Weekly-Given-Task/blob/main/Week_5_Task/Output/Demo_Video_Species_Frequency_Count.mp4)
+
+
 
 > Demo Video: https://github.com/user-attachments/assets/eb40a13e-caba-474b-950e-996cf1c5b0c5
 ---
