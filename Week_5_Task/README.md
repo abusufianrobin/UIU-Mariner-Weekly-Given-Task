@@ -18,6 +18,7 @@ A simple and interactive web-based application to calculate species observation 
 <p align="center">
   ▶️ Click the image above to watch the full demo on YouTube
 </p>
+
 ---
 
 ## Features
