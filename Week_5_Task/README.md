@@ -9,7 +9,15 @@ A simple and interactive web-based application to calculate species observation 
 
 ## 🎥 Demo Video
 
-> Demo Video: https://github.com/user-attachments/assets/eb40a13e-caba-474b-950e-996cf1c5b0c5
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=tI9se_432Do">
+    <img src="https://img.youtube.com/vi/tI9se_432Do/0.jpg" alt="Project Demo Video" width="600"/>
+  </a>
+</p>
+
+<p align="center">
+  ▶️ Click the image above to watch the full demo on YouTube
+</p>
 ---
 
 ## Features
